@@ -1,0 +1,10 @@
+
+.nav .navContainer {
+    height: 430px;
+    line-height: 400px;
+}
+
+.textContainer h2 {
+    vertical-align: middle;
+    display: inline-block;
+}
