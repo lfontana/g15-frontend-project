@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Some Title</title>
+    <style media="screen">
+      .main {
+        display: none;
+      }
+      .form {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Hello <span id="name"></span></h1>
+      <input type="button" name="name" id="forgetMe" value="Forget Me">
+    </div>
+    <div class="form">
+      <label for="name">Enter your name</label>
+      <input type="text" name="name" id="enterName" value="">
+      <input type="button" id="submitButton" name="submit" value="Submit">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        hideOrShowForm();
+        $('#submitButton').on('click', submitButtonClicked);
+        $('#forgetMe').on('click', removeNameFromLocalStorage);
+      });
+      function hideOrShowForm() {
+        var name = localStorage.getItem('name');
+        console.log(name);
+        if(!name){
+          $('.form').show();
+        } else {
+          $('#name').text(name);
+          $('.main').show();
+        }
+      }
+      function submitButtonClicked() {
+        var name = $('#enterName').val();
+        if(!name) {
+          alert('You must enter a name!')
+        } else {
+          localStorage.setItem('name', name);
+          // Set the name span to name
+          $('#name').text(name);
+          // Hide form
+          $('.form').hide();
+          // Show main div with H1
+          $('.main').show();
+        }
+      }
+      function removeNameFromLocalStorage() {
+        localStorage.removeItem('name');
+        $('#name').text('');
+        $('.main').hide();
+        $('.form').show();
+      }
+    </script>
+  </body>
+</html>
