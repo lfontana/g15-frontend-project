@@ -1,0 +1,24 @@
+body {
+    background-image: url("../pics/tie_dye1.jpg");
+    background-size: contain;
+}
+
+.enter {
+  margin-top: 50%;
+}
+
+.btn-default {
+  background-color: black;
+  color: white;
+}
+
+.page-header {
+  background-color: black;
+  color: white;
+  margin: 0;
+}
+
+.h1, h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}

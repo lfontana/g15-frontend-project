@@ -8,29 +8,22 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/landing.css">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
   </head>
   <body>
+
+<!-- This page is sparse due to the 6-9 second page load I was having due to the API call to archive.org. I had a "home" button on each page that returned the user to index.html but that was reloading the metadata every time. This isolates the API call to the initial page. Probably a hack but it's the best I can come up with.
+-->
+
     <div class="page-header text-center">
       <h1>unDead <br> <small>The streaming app for Deadheads</small></h1>
     </div>
-
-    <section id="nav" class="nav">
-      <div class = "container-fluid">
-        <div class="row">
-          <div class="col-md-4 text-center btn_center">
-            <div class="btn-group-vertical btn-group-lg">
-              <button type="button" class="btn btn-primary href="pages/main.html>Enter</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8"></div>
-    </section>
+    <div class="enter text-center">
+        <a href="../pages/main.html" class="btn btn-default btn-lg">Enter</a>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

@@ -1,1 +1,3 @@
-# g15-frontend-project
+# Trigger Warning: this project may cause grief, angst and profound distress to developers with even a small amount of experience. Sorry - it's a learning experience for me and not intended for any use other than that.
+
+The unDead app is a student project for Galvanize cohort 15. It's front-end code only, no DB, so I use local storage. The API call is from Archive.org. It first returns the metadata for each grateful dead concert in the Grateful Dead collection. I then use javascript voodoo to create an array containing only the metadata for the "best concert" for each date. "bestConcert" in this case is the concert with the highest number of downloads for any given date.

@@ -1,3 +1,19 @@
+
+
+body {
+    background-image: url("../pics/tie_dye1.jpg");
+    background-size: contain;
+}
+
+.enter {
+  margin-top: 50%;
+}
+
+.btn-default {
+  background-color: black;
+  color: white;
+}
+
 .page-header {
   background-color: black;
   color: white;
@@ -16,5 +32,5 @@
 
 .nav {
         background: url(../pics/tie_dye1.jpg) no-repeat center center fixed;
-        background-size:100% contain;
+        background-size: contain;
     }
