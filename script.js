@@ -1,11 +1,26 @@
 
 // url comes from the http://archive.org/advancedsearch.php search. Pulls the following fields from the Grateful Dead collection: coverage, date, description, downloads, title, year & identifier.
-var url = 'http://archive.org/advancedsearch.php?q=collection%3AGratefulDead&fl%5B%5D=coverage&fl%5B%5D=date&fl%5B%5D=description&fl%5B%5D=downloads&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=year&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=20000&page=1&output=json&callback=callback&save=yes';
+var url = 'http://archive.org/advancedsearch.php?q=collection%3AGratefulDead&fl%5B%5D=coverage&fl%5B%5D=date&fl%5B%5D=description&fl%5B%5D=downloads&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=year&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=20000&page=1&output=json&callback=callback&save=yes'
 
 // uses lodash _.groupBy function to group the results by date.
 $.ajax({
   url: url, dataType: 'jsonp', success: function (data) {
-    console.log(data)
-    console.log(_.groupBy(data.response.docs, 'date'))
+    var concertsByDate = _.groupBy(data.response.docs, 'date')
+    var dates = Object.keys(concertsByDate)
+    var bestConcerts = []
+// Nested for loops to fill the empty bestConcerts array with the show that has the highest number of downloads
+    for (var i = 0; i < dates.length; i++) {
+      var concertsOnDate = concertsByDate[dates[i]]
+      var bestConcertOnDateIndex = 0
+      for (var n = 0; n < concertsOnDate.length; n++) {
+// Use parseInt to turn downloads strings into integers
+        if (parseInt(concertsOnDate[n].downloads) > parseInt(concertsOnDate[bestConcertOnDateIndex].downloads)) {
+          bestConcertOnDateIndex = n
+        }
+      }
+      bestConcerts.push(concertsOnDate[bestConcertOnDateIndex])
+      concertsByDate[dates[i]] = concertsOnDate[bestConcertOnDateIndex]
+    }
+    console.log(concertsByDate)
   }
 })
