@@ -6,7 +6,12 @@ var url = 'http://archive.org/advancedsearch.php?q=collection%3AGratefulDead&fl%
 // uses lodash _.groupBy function to group the results by date.
 $.ajax({
   url: url, dataType: 'jsonp', success: function (data) {
-    var concertsByDate = _.groupBy(data.response.docs, 'date')
+  var concertsByDate = _.groupBy(data.response.docs, function(c){
+    if (c.date){
+      return c.date.substring(0,10)
+    }
+    else return "unknown"
+  })
     var dates = Object.keys(concertsByDate)
     var bestConcerts = []
 // Nested for loops to fill the empty bestConcerts array with the show that has the highest number of downloads
@@ -19,13 +24,17 @@ $.ajax({
           bestConcertOnDateIndex = n
         }
       }
+// Iterate over the date field and remove the extraneous characters
+    if (concertsOnDate[bestConcertOnDateIndex].date) {
+      concertsOnDate[bestConcertOnDateIndex].date = concertsOnDate[bestConcertOnDateIndex].date.substring(0, 10)
       bestConcerts.push(concertsOnDate[bestConcertOnDateIndex])
       concertsByDate[dates[i]] = concertsOnDate[bestConcertOnDateIndex]
+      }
     }
     console.log(concertsByDate)
 // Push the data into localStorage
     localStorage.setItem('data', JSON.stringify(concertsByDate))
-// Verification that the data is acrually there 
+// Verification that the data is actually there
     console.log(JSON.parse(localStorage.getItem('data')));
   }
 })
