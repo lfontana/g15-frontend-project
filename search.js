@@ -23,6 +23,43 @@ $("#dateSearchBtn").click(function() {
   }
 });
 
+$.ajax({
+  url: url, dataType: 'jsonp', success: function (data) {
+  var concertsByDate = _.groupBy(data.response.docs, function(c){
+    if (c.date){
+      return c.date.substring(0,10)
+    }
+    else return "unknown"
+  })
+    var dates = Object.keys(concertsByDate)
+    var bestConcerts = []
+// Nested for loops to fill the empty bestConcerts array with the show that has the highest number of downloads
+    for (var i = 0; i < dates.length; i++) {
+      var concertsOnDate = concertsByDate[dates[i]]
+      var bestConcertOnDateIndex = 0
+      for (var n = 0; n < concertsOnDate.length; n++) {
+// Use parseInt to turn downloads strings into integers
+        if (parseInt(concertsOnDate[n].downloads) > parseInt(concertsOnDate[bestConcertOnDateIndex].downloads)) {
+          bestConcertOnDateIndex = n
+        }
+      }
+// Iterate over the date field and remove the extraneous characters
+    if (concertsOnDate[bestConcertOnDateIndex].date) {
+      concertsOnDate[bestConcertOnDateIndex].date = concertsOnDate[bestConcertOnDateIndex].date.substring(0, 10)
+      bestConcerts.push(concertsOnDate[bestConcertOnDateIndex])
+      concertsByDate[dates[i]] = concertsOnDate[bestConcertOnDateIndex]
+      }
+    }
+    console.log(concertsByDate)
+// Push the data into localStorage
+    localStorage.setItem('data', JSON.stringify(concertsByDate))
+// Verification that the data is actually there
+    console.log(JSON.parse(localStorage.getItem('data')));
+  }
+})
+
+
+
 // Search by City
 
 $("#citySearchBtn").click(function() {
