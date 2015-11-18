@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/player.css">
   </head>
   <body>
     <div class="page-header text-center">
@@ -24,7 +25,8 @@
           <input type="text" class="form-control" id="dateSearchText" placeholder="YYYY-MM-DD">
         </div>
       </div>
-        <br>
+    </div>  
+        <!-- <br>
       <div class="col-lg-6">
         <div class="input-group">
           <input type="text" class="form-control" id="citySearchText" placeholder="New York City">
@@ -33,16 +35,24 @@
           </span>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div id="searchResults">
 
     </div>
+
+    <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
+            Sorry, your browser does not support HTML5 audio.
+    </audio>
+    <ol id="playlist" style="list-style-type:none">
+
+    </ol>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/lodash.js"></script>
     <script src="/search.js"></script>
+    <script src="/player.js"></script>
   </body>
 </html>

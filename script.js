@@ -31,7 +31,7 @@ $.ajax({
       concertsByDate[dates[i]] = concertsOnDate[bestConcertOnDateIndex]
       }
     }
-    console.log(concertsByDate)
+    // console.log(concertsByDate)
 // Push the data into localStorage
     localStorage.setItem('data', JSON.stringify(concertsByDate))
 // Verification that the data is actually there
