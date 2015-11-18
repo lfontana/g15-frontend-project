@@ -29,6 +29,15 @@ $("#dateSearchBtn").click(function() {
                 return parseInt(obj1.track) - parseInt(obj2.track);
               });
               console.log(thisSetListIndex)
+              console.log(thisSetListIndex.length)
+              var playList = []
+              for (var i = 0; i < thisSetListIndex.length; i++) {
+                 var mp3Link = 'https://archive.org/download/' + concert.identifier + '/' + thisSetListIndex[i].name
+                 //console.log(mp3Link)
+                 playList.push(mp3Link)
+               }
+               console.log(playList)
+
             }
           })
         })
