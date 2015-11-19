@@ -20,15 +20,16 @@ $("#dateSearchBtn").click(function() {
               for (var i = 0; i < data.files.length; i++) {
                 var thisShowNames = data.files[i].name;
                 var track = data.files[i].track;
-                // console.log(thisShowNames.substr(thisShowNames.length - 3))
-                if (thisShowNames.substr(thisShowNames.length - 3) === 'mp3') {
-                  thisSetListIndex.push({ name: thisShowNames, track: track});
+                var title = data.files[i].title;
+                if (thisShowNames.substr(thisShowNames.length - 7) === 'vbr.mp3') {
+                } else if (thisShowNames.substr(thisShowNames.length - 3) === 'mp3') {
+                  thisSetListIndex.push({ name: thisShowNames, track: track, title: title});
                 }
               }
               thisSetListIndex.sort(function(obj1, obj2) {
                 return parseInt(obj1.track) - parseInt(obj2.track);
               });
-              // console.log(thisSetListIndex)
+              console.log(thisSetListIndex)
               // console.log(thisSetListIndex.length)
               var playList = []
               for (var i = 0; i < thisSetListIndex.length; i++) {
@@ -39,9 +40,9 @@ $("#dateSearchBtn").click(function() {
                var $a= $("#audio")
                $a.append("<source type="+'"audio/mp3"'+"src="+playList[0]+">")
                var $l= $("#playlist")
-               $l.append("<li class="+'"active"'+"><a href="+ playList[0]+"></a></li>")
+               $l.append("<li class="+'"active"'+"><a href="+ playList[0]+"></a>"+title[i]+"</li>")
                for (var i = 1; i < playList.length; i++) {
-                 $l.append("li class="+"><a href="+ playList[i]+"></a></li>")
+                 $l.append("<li class="+"><a href="+ playList[i]+"></a>"+title[i]+"</li>")
                }
             }
           })

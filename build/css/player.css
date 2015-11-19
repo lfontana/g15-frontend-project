@@ -1,7 +1,6 @@
 #playlist,audio {
   background:#666;
   width:320px;
-  padding:20px;
 }
 .active a {
   color:#5DB0E6;

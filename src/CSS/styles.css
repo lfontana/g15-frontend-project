@@ -1,12 +1,19 @@
 
 
 body {
-    background-image: url("../pics/tie_dye1.jpg");
+    background: url("../pics/tie_dye1.jpg");
     background-size: contain;
+}
+.enterbutton {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -45px;
 }
 
 .enter {
-  margin-top: 50%;
+  display: none;
 }
 
 .btn-default {
@@ -31,6 +38,14 @@ body {
 }
 
 .nav {
-        background: url(../pics/tie_dye1.jpg) no-repeat center center fixed;
-        background-size: contain;
+  /*background: url(../pics/tie_dye1.jpg) no-repeat center center fixed;*/
+  background-size: contain;
     }
+
+#searchResults {
+  padding-top: 25px;
+    }
+
+#aplayer {
+  padding-top: 25px;
+}

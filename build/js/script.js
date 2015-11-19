@@ -34,6 +34,8 @@ $.ajax({
     // console.log(concertsByDate)
 // Push the data into localStorage
     localStorage.setItem('data', JSON.stringify(concertsByDate))
+// Keep button hidden until metadata is loaded into local storage
+    $("#enterbtn").show();
 // Verification that the data is actually there
     console.log(JSON.parse(localStorage.getItem('data')));
   }

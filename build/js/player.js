@@ -12,7 +12,7 @@ function init () {
   playlist = $('#playlist')
   tracks = playlist.find('li a')
   len = tracks.length - 1
-  audio[0].volume = .30
+  audio[0].volume = .70
   playlist.find('a').click(function (e) {
     e.preventDefault()
     link = $(this)
