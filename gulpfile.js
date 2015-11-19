@@ -3,5 +3,5 @@ var gulp = require('gulp');
 gulp.task('default', function () {
 	gulp
 		.src('./src/**/*')
-		.pipe(gulp.dest('../build'))
+		.pipe(gulp.dest('../build'));
 })
