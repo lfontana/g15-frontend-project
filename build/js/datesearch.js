@@ -40,9 +40,9 @@ $("#dateSearchBtn").click(function() {
                var $a= $("#audio")
                $a.append("<source type="+'"audio/mp3"'+"src="+playList[0]+">")
                var $l= $("#playlist")
-               $l.append("<li class="+'"active"'+"><a href="+ playList[0]+"></a>"+title[i]+"</li>")
-               for (var i = 1; i < playList.length; i++) {
-                 $l.append("<li class="+"><a href="+ playList[i]+"></a>"+title[i]+"</li>")
+               $l.append("<li class="+'"active"'+"><a href="+ playList[0]+">"+thisSetListIndex[0].title+"</a></li>")
+               for (var j = 1; j < playList.length; j++) {
+                 $l.append("<li class="+"><a href="+ playList[j]+">"+thisSetListIndex[j].title+"</a></li>")
                }
             }
           })

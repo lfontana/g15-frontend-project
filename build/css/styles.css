@@ -49,3 +49,7 @@ body {
 #aplayer {
   padding-top: 25px;
 }
+
+#playlist {
+  display: none;
+}
