@@ -18,7 +18,7 @@ $("#citySearchBtn").click(function() {
     for (var i = 0; i < allConcertsByCity.length; i++) {
       var foundConcert = allConcertsByCity[i]
       var $searchResults = $('#searchResults')
-      var $citySearchResult = $('<h3 data-date = "'+ foundConcert.date+'" style="color: white">' + foundConcert.title +'</h3>')
+      var $citySearchResult = $('<h5 data-date = "'+ foundConcert.date+'" style="color: white">' + foundConcert.title +'</h5>')
       $citySearchResult.on ('click', function(){
         var concerts = allConcerts[this.dataset.date]
         // console.log(concerts.identifier);

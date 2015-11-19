@@ -6,7 +6,7 @@ $("#dateSearchBtn").click(function() {
     if (allConcerts.hasOwnProperty(dateSearch)){
       var foundConcert = allConcerts[dateSearch]
       var $searchResults = $('#searchResults')
-      var $searchResult = $('<h3 data-date = "'+foundConcert.date+'" style="color: white">' + foundConcert.title + '</h3>')
+      var $searchResult = $('<h5 data-date = "'+foundConcert.date+'" style="color: white">' + foundConcert.title + '</h5>')
         $searchResults.append ($searchResult)
         $searchResult.click(function(){
           var concert = allConcerts[this.dataset.date]
