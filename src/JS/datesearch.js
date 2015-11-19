@@ -1,6 +1,5 @@
 // Search by date, pull metadata from local storage, use that to call the metadata API, return the MP3 file extensions, build a play list and play the audio.
 $("#dateSearchBtn").click(function() {
-  // alert( "Handler for .click() called." );
   var dateSearch = $('#dateSearchText').val()
   var allConcerts = JSON.parse(localStorage.getItem('data'));
     if (allConcerts.hasOwnProperty(dateSearch)){
@@ -10,12 +9,9 @@ $("#dateSearchBtn").click(function() {
         $searchResults.append ($searchResult)
         $searchResult.click(function(){
           var concert = allConcerts[this.dataset.date]
-          // console.log(concert.identifier);
           var urlMetadata = ("https://archive.org/metadata/" + concert.identifier)
           $.ajax({
             url: urlMetadata, dataType: 'jsonp', success: function (data) {
-              // console.log(data)
-              // console.log(data.files.length)
               var thisSetListIndex = [];
               for (var i = 0; i < data.files.length; i++) {
                 var thisShowNames = data.files[i].name;
@@ -30,13 +26,11 @@ $("#dateSearchBtn").click(function() {
                 return parseInt(obj1.track) - parseInt(obj2.track);
               });
               console.log(thisSetListIndex)
-              // console.log(thisSetListIndex.length)
               var playList = []
               for (var i = 0; i < thisSetListIndex.length; i++) {
                  var mp3Link = 'https://archive.org/download/' + concert.identifier + '/' + thisSetListIndex[i].name
                  playList.push(mp3Link)
                }
-               // console.log(playList)
                var $a= $("#audio")
                $a.append("<source type="+'"audio/mp3"'+"src="+playList[0]+">")
                var $l= $("#playlist")
@@ -49,6 +43,6 @@ $("#dateSearchBtn").click(function() {
         })
       }
         else {
-          console.log ("No shows on this date in the Archive");
+          alert("No shows on this date in the Archive");
         }
  });

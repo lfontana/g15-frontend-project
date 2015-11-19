@@ -1,3 +1,4 @@
+// This is the playlist used by the default HTML5 audio controls
 // define variables
 var audio
 var playlist
