@@ -4,55 +4,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Search</title>
+    <title>g15 frontend project</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/player.css">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
   </head>
   <body>
     <div class="page-header text-center">
-      <h1>unDead <br></h1>
-      <a href="../pages/main.html" class="btn btn-primary btn-sm active" role="button">Home</a>
+      <h1>unDead</h1>
     </div>
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button" id="dateSearchBtn">Search</button>
-          </span>
-          <input type="text" class="form-control" id="dateSearchText" placeholder="YYYY-MM-DD">
+    <section id="nav" class="nav">
+      <div class = "container-fluid">
+        <div class="row">
+          <div class="col-md-4 text-center btn_center">
+            <div class="btn-group-vertical btn-group-lg">
+              <a href="../pages/searchdate.html" class="btn btn-primary btn-lg active" role="button">Search By Date</a>
+                <br>
+              <a href="../pages/citysearch.html" class="btn btn-primary btn-lg active" role="button">Search By City</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>  
-        <!-- <br>
-      <div class="col-lg-6">
-        <div class="input-group">
-          <input type="text" class="form-control" id="citySearchText" placeholder="New York City">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button" id="citySearchBtn">Search</button>
-          </span>
-        </div>
-      </div>
-    </div> -->
-
-    <div id="searchResults">
-
-    </div>
-
-    <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
-            Sorry, your browser does not support HTML5 audio.
-    </audio>
-    <ol id="playlist" style="list-style-type:none">
-
-    </ol>
-
+      <div class="col-md-8"></div>
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/lodash.js"></script>
-    <script src="/search.js"></script>
-    <script src="/player.js"></script>
+
   </body>
 </html>
