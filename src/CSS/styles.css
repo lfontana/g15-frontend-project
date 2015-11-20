@@ -36,23 +36,6 @@
   margin-left: -45px;
 }
 
-.searchbutton {
-  text-align: center;
-  position: absolute;
-  top: 10%;
-  left: 30%;
-  margin-left: -45px;
-}
-
-
-.btn-group-lg {
-  text-align: center;
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  margin-left: -45px;
-}
-
 #searchResults {
   padding-top: 25px;
     }
@@ -74,6 +57,13 @@
       background: url("../pics/tie_dye2.jpg");
       background-size: 100%;
     }
+    .searchbutton {
+      text-align: center;
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      margin-left: -10px;
+    }
 }
 
 @media only screen
@@ -84,4 +74,13 @@
         background: url("../pics/tie_dye1.jpg");
         background-size: 50%;
     }
+
+    .searchbutton {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      margin-left: -45px;
+    }
+
 }
