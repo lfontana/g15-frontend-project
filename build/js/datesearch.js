@@ -25,7 +25,7 @@ $("#dateSearchBtn").click(function() {
               thisSetListIndex.sort(function(obj1, obj2) {
                 return parseInt(obj1.track) - parseInt(obj2.track);
               });
-              console.log(thisSetListIndex)
+              //console.log(thisSetListIndex)
               var playList = []
               for (var i = 0; i < thisSetListIndex.length; i++) {
                  var mp3Link = 'https://archive.org/download/' + concert.identifier + '/' + thisSetListIndex[i].name

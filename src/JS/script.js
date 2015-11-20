@@ -37,6 +37,6 @@ $.ajax({
 // Keep button hidden until metadata is loaded into local storage
     $("#enterbtn").show();
 // Verification that the data is actually there
-    console.log(JSON.parse(localStorage.getItem('data')));
+    // console.log(JSON.parse(localStorage.getItem('data')));
   }
 })
