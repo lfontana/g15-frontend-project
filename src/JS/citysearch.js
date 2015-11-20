@@ -13,9 +13,10 @@ $("#citySearchBtn").click(function() {
     alert("No shows for this city in the Archive");
   }
   else {
+    var $searchResults = $('#searchResults')
+    $searchResults.html("")
     for (var i = 0; i < allConcertsByCity.length; i++) {
       var foundConcert = allConcertsByCity[i]
-      var $searchResults = $('#searchResults')
       var $citySearchResult = $('<h5 data-date = "'+ foundConcert.date+'" style="color: white">' + foundConcert.title +'</h5>')
       $citySearchResult.on ('click', function(){
         var concerts = allConcerts[this.dataset.date]
